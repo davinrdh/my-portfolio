@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import Header from "./components/Header/Header";
 import { useEffect, useState } from "react";
-import {motion} from "framer-motion"
+import {Variants, motion} from "framer-motion"
 
 export default function App() {
   const [mousePosition, setMousePosition] = useState({
@@ -32,7 +32,7 @@ export default function App() {
     }
   }, [])
 
-  const variants = {
+  const variants: Variants = {
     default: {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16
