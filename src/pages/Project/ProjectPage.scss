@@ -1,0 +1,43 @@
+.project {
+    padding: 4rem 3rem;
+    //   display: flex;
+
+    h1 {
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+
+    a {
+        color: azure;
+        text-decoration: none;
+    }
+
+    .box-project {
+        border: 1px solid var(--secondary);
+        // height: 22.5rem;
+        padding: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        
+        // &:hover {
+        //     border: 1px solid var(--primary);
+        //     background-color: var(--primary);
+        // }
+
+        img {
+            border-radius: 8px;
+        }
+
+        h5 {
+            margin-top: .5rem;
+            margin-bottom: 0;
+        }
+
+        h6 {
+            font-size: 12px;
+            margin: 0;
+            color: azure;
+        }
+
+    }
+}
