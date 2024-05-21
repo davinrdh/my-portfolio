@@ -50,9 +50,11 @@ export default function Skill() {
             img: '/img/skill/figma.svg'
         },
     ]
+
+    
   return (
     <div className="container">
-      <h1 className="text-center">My Skills</h1>
+      <h1 className="text-center">My <span className="text-primary">Skills</span></h1>
       <Row className="skill mt-5">
         {dataSkill?.map((data: any, i: number) => (
         <Col md={2} xs={3} className="box-skill" key={i}>

@@ -24,7 +24,7 @@ export default function ProjectPage() {
     <div style={{ background: "var(--secondary)" }}>
       <Container>
         <div className="project">
-          <h1 className="text-center">My Projects</h1>
+          <h1 className="text-center">My <span className="text-primary">Projects</span></h1>
           <Row className="justify-content-evenly gap-3">
             {datas?.map((data: any, i: number) => (
               <a
