@@ -28,3 +28,31 @@
         }
     }
 }
+
+.snail {
+    // width: 100%;
+    background-color: var(--secondary);
+    overflow: hidden;
+    height: auto;
+    position: relative;
+  }
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 4rem 12px;
+        // height: 0vh;
+
+        h1 {
+            font-size: 38px;
+        }
+
+        p {
+            font-size: 12px;
+            padding: 0;
+        }
+
+        // .git {
+        //     display: block !important;
+        // }
+    }
+ }

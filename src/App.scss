@@ -7,7 +7,7 @@
   
   body {
     background-color: var(--background);
-    color: azure;
+    color: var(--black);
     // overflow: hidden;
   }
   
@@ -41,13 +41,38 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 9999;
     pointer-events: none;
     transition: width 0.2s, height 0.2s, background-color 0.2s;
   }
 
   .text-primary {
     color: var(--primary) !important;
+  }
+
+  footer {
+    // border-top: 2px solid var(--primary);
+    // padding: 1rem 0;
+
+    .line-gradient {
+      width: 100%;
+      height: 2.5px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--black);
+
+      i {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .text-title {
+    margin-bottom: 3rem !important;
+    text-align: center;
   }
 
   @media screen and (max-width: 768px) {

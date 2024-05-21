@@ -54,8 +54,8 @@ export default function Skill() {
     
   return (
     <div className="container">
-      <h1 className="text-center">My <span className="text-primary">Skills</span></h1>
-      <Row className="skill mt-5">
+      <h1 className="text-title">My <span className="text-primary">Skills</span></h1>
+      <Row className="skill">
         {dataSkill?.map((data: any, i: number) => (
         <Col md={2} xs={3} className="box-skill" key={i}>
           <img src={data?.img} alt="" width={60} height={60} />

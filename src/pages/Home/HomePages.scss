@@ -31,7 +31,7 @@
 .skill {
     display: flex;
     // flex-direction: wrap;
-    margin: 2rem;
+    margin-bottom: 7.5rem;
     // padding: 0 10rem;
     gap: 2rem;
     justify-content: center;
@@ -97,9 +97,9 @@
         height: 100%;
         background-color: var(--secondary);
         z-index: 1;
-      }
-      
-      .circle {
+    }
+
+    .circle {
         position: absolute;
         left: calc(50% - 10px);
         bottom: 0;
@@ -109,7 +109,7 @@
         border-radius: 50%;
         border: 2px solid var(--primary);
         // z-index: 1;
-      }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -173,8 +173,20 @@
             p {
                 font-size: 10px;
             }
+        }
+    }
+}
 
+@media screen and (max-width: 365px) {
+    .experience {
+        .industries {
+            height: 20rem;
+            padding: 1rem 0;
         }
 
+        .responsibility {
+            height: 20rem;
+            padding: 1rem 0;
+        }
     }
 }

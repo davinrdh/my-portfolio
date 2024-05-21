@@ -1,10 +1,11 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { NavLink, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import HomePages from "./pages/Home/HomePages";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
 import Header from "./components/Header/Header";
 import { useEffect, useState } from "react";
 import { Variants, motion } from "framer-motion";
+import ContactPages from "./pages/Contact/ContactPages";
 
 export default function App() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -25,17 +26,18 @@ export default function App() {
     default: {
       x: mousePosition.x - 16,
       y: mousePosition.y - 16,
-      transition: { type: "spring", stiffness: 800, damping: 30, mass: 1 }
+      // transition: { type: "spring", stiffness: 800, damping: 30, mass: 1 },
+      display: "none",
     },
     text: {
       height: 150,
       width: 150,
       x: mousePosition.x - 75,
       y: mousePosition.y - 75,
-      backgroundColor: 'var(--primary)',
+      backgroundColor: "var(--primary)",
       mixBlendMode: "difference",
-      transition: { type: "spring", stiffness: 800, damping: 30, mass: 1 }
-    }
+      transition: { type: "spring", stiffness: 800, damping: 30, mass: 1 },
+    },
   };
 
   const textEnter = () => setCursorVariant("text");
@@ -43,16 +45,34 @@ export default function App() {
 
   return (
     <>
-      <Header /> 
-      <motion.div 
-        className="cursor"
-        variants={variants}
-        animate={cursorVariant}
-      />
       <Router>
+        <Header />
+        <motion.div
+          className="cursor"
+          variants={variants}
+          animate={cursorVariant}
+        />
         <Routes>
-          <Route path="/" element={<HomePages textEnter={textEnter} textLeave={textLeave} />} />
+          <Route
+            path="/"
+            element={<HomePages textEnter={textEnter} textLeave={textLeave} />}
+          />
+          <Route path="/contact" element={<ContactPages />} />
         </Routes>
+        <footer className="text-center">
+          <div className="line-gradient"></div>
+          <div className="d-flex justify-content-center gap-5 py-3">
+            <a href="https://github.com/davinrdh" target="_blank">
+              <i className="bi bi-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/davin-ridha" target="_blank">
+              <i className="bi bi-linkedin"></i>
+            </a>
+            <NavLink to={'/contact'}>
+              <i className="bi bi-envelope-at-fill"></i>
+            </NavLink>
+          </div>
+        </footer>
       </Router>
     </>
   );

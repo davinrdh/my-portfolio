@@ -8,7 +8,7 @@
     }
 
     a {
-        color: azure;
+        color: var(--black);
         text-decoration: none;
     }
 
@@ -18,11 +18,6 @@
         padding: 1rem;
         border-radius: 8px;
         cursor: pointer;
-        
-        // &:hover {
-        //     border: 1px solid var(--primary);
-        //     background-color: var(--primary);
-        // }
 
         img {
             border-radius: 8px;
@@ -36,7 +31,7 @@
         h6 {
             font-size: 12px;
             margin: 0;
-            color: azure;
+            color: var(--black);
         }
 
     }

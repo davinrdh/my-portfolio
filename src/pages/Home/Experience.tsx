@@ -18,7 +18,7 @@ export default function Experience() {
 
   return (
     <div className="experience">
-      <h1 className="text-center">
+      <h1 className="text-title">
         My <span className="text-primary">Experiences</span>
       </h1>
       <Row className="my-5">
