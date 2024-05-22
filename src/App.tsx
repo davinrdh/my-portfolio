@@ -1,61 +1,45 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { NavLink, Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import HomePages from "./pages/Home/HomePages";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
 import Header from "./components/Header/Header";
 import { useEffect, useState } from "react";
-import { Variants, motion } from "framer-motion";
 import ContactPages from "./pages/Contact/ContactPages";
+import LoadingScreen from "./components/LoadingScreen";
 
 export default function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [cursorVariant, setCursorVariant] = useState("default");
+  const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+    const interval = setInterval(() => {
+      setProgress((oldProgress) => {
+        if (oldProgress === 100) {
+          clearInterval(interval);
+          setLoading(false);
+          return 100;
+        }
+        return Math.min(oldProgress + 10, 100);
+      });
+    }, 300);
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
+    return () => clearInterval(interval);
   }, []);
 
-  const variants: Variants = {
-    default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
-      // transition: { type: "spring", stiffness: 800, damping: 30, mass: 1 },
-      display: "none",
-    },
-    text: {
-      height: 150,
-      width: 150,
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75,
-      backgroundColor: "var(--primary)",
-      mixBlendMode: "difference",
-      transition: { type: "spring", stiffness: 800, damping: 30, mass: 1 },
-    },
-  };
-
-  const textEnter = () => setCursorVariant("text");
-  const textLeave = () => setCursorVariant("default");
+  if (loading) {
+    return <LoadingScreen progress={progress} />;
+  }
 
   return (
     <>
       <Router>
         <Header />
-        <motion.div
-          className="cursor"
-          variants={variants}
-          animate={cursorVariant}
-        />
+        {/* <LoadingScreen /> */}
         <Routes>
           <Route
             path="/"
-            element={<HomePages textEnter={textEnter} textLeave={textLeave} />}
+            element={<HomePages />}
           />
           <Route path="/contact" element={<ContactPages />} />
         </Routes>

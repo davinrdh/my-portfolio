@@ -31,7 +31,7 @@ export default function ProjectPage() {
                 href={data?.link}
                 target="_blank"
                 key={i}
-                className="col-md-3 box-project"
+                className="col-lg-3 box-project"
               >
                 <img src={data?.img} alt="" className="img-fluid" />
                 <h5>{data?.name}</h5>

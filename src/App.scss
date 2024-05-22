@@ -36,7 +36,7 @@
   .cursor {
     width: 32px;
     height: 32px;
-    background-color: white;
+    background-color: var(--background);
     border-radius: 50%;
     position: fixed;
     top: 0;
@@ -74,9 +74,34 @@
     margin-bottom: 3rem !important;
     text-align: center;
   }
+  
+  .loading-screen {
+    background-color: var(--secondary);
+
+    .loading-logo {
+      width: 100px;
+    }
+
+    .progress {
+      width: 25%;
+      background-color: var(--background);
+
+      .progress-bar {
+        background-color: var(--primary);
+        color: var(--background);
+      }
+    }
+  }
 
   @media screen and (max-width: 768px) {
     .cursor {
       display: none;
+    }
+
+    .loading-screen {
+
+      .progress {
+        width: 50%;
+      }
     }
    }
