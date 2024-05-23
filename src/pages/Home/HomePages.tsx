@@ -7,16 +7,10 @@ import Experience from "./Experience";
 import Footer from "../../components/Footer/Footer";
 import { Variants, motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 export default function HomePages() {
-  const location = useLocation()
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState("default");
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

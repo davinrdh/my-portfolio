@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Container, Row } from "react-bootstrap";
 import "./ProjectPage.scss";
+import { motion } from "framer-motion";
 
 export default function ProjectPage() {
   const datas = [
@@ -24,10 +26,16 @@ export default function ProjectPage() {
     <div style={{ background: "var(--secondary)" }}>
       <Container>
         <div className="project">
-          <h1 className="text-title">My <span className="text-primary">Projects</span></h1>
+          <h1 className="text-title">
+            My <span className="text-primary">Projects</span>
+          </h1>
           <Row className="justify-content-evenly gap-3">
             {datas?.map((data: any, i: number) => (
-              <a
+              <motion.a
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: i * 0.3 }}
                 href={data?.link}
                 target="_blank"
                 key={i}
@@ -38,13 +46,13 @@ export default function ProjectPage() {
                 {/* <h6>{data?.tech?.join('/')}</h6> */}
                 <p className="mb-2">{data?.desc}</p>
                 <div className="d-flex gap-1">
-                  {data?.tech.map((item: any, k:number) => (
+                  {data?.tech.map((item: any, k: number) => (
                     <Button key={k} variant="outline-secondary">
                       <h6>{item}</h6>
                     </Button>
                   ))}
                 </div>
-              </a>
+              </motion.a>
             ))}
           </Row>
         </div>
