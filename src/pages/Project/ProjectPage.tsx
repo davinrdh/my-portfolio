@@ -3,6 +3,7 @@
 import { Button, Container, Row } from "react-bootstrap";
 import "./ProjectPage.scss";
 import { motion } from "framer-motion";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function ProjectPage() {
   const datas = [
@@ -22,15 +23,21 @@ export default function ProjectPage() {
     },
   ];
 
+  const location = useLocation();
+
+  console.log(location);
+
+  const sliceData = location.pathname === "/" ? datas?.slice(0, 3) : datas;
+
   return (
-    <div style={{ background: "var(--secondary)" }}>
+    <div style={{ background: `${location.pathname === '/' && 'var(--secondary)'}` }}>
       <Container>
         <div className="project">
           <h1 className="text-title">
             My <span className="text-primary">Projects</span>
           </h1>
           <Row className="justify-content-evenly gap-3">
-            {datas?.map((data: any, i: number) => (
+            {sliceData?.map((data: any, i: number) => (
               <motion.a
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -55,6 +62,11 @@ export default function ProjectPage() {
               </motion.a>
             ))}
           </Row>
+          {location.pathname === "/" && (
+            <NavLink to="/project" className="d-flex justify-content-center mt-3">
+              <Button variant="outline-primary" className="">View More</Button>
+            </NavLink>
+          )}
         </div>
       </Container>
     </div>
