@@ -4,7 +4,7 @@ export default function ContactPages() {
   return (
     <>
       <div className="contact">
-        <h1>Get in Touch</h1>
+        <h1>Get <span className="text-primary">In</span> Touch</h1>
       </div>
     </>
   );

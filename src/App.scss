@@ -1,107 +1,165 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--black);
+  // overflow: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.cursor {
+  width: 32px;
+  height: 32px;
+  background-color: var(--background);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transition:
+    width 0.2s,
+    height 0.2s,
+    background-color 0.2s;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+footer {
+  // border-top: 2px solid var(--primary);
+  // padding: 1rem 0;
+
+  .line-gradient {
+    width: 100%;
+    height: 2.5px;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
   }
-  
-  body {
-    background-color: var(--background);
+
+  a {
+    text-decoration: none;
     color: var(--black);
-    // overflow: hidden;
-  }
-  
-  /* width */
-  ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-      background: #f1f1f1;
+
+    i {
+      font-size: 30px;
     }
-    
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 8px;
   }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+}
+
+.text-title {
+  margin-bottom: 3rem !important;
+  text-align: center;
+}
+
+.loading-screen {
+  background-color: var(--secondary);
+
+  .loading-logo {
+    width: 100px;
   }
 
-  .cursor {
-    width: 32px;
-    height: 32px;
+  .progress {
+    width: 25%;
     background-color: var(--background);
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    pointer-events: none;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
-  }
 
-  .text-primary {
-    color: var(--primary) !important;
-  }
-
-  footer {
-    // border-top: 2px solid var(--primary);
-    // padding: 1rem 0;
-
-    .line-gradient {
-      width: 100%;
-      height: 2.5px;
-      background: linear-gradient(to right, transparent, var(--primary), transparent);
+    .progress-bar {
+      background-color: var(--primary);
+      color: var(--background);
     }
+  }
+}
 
+.no-scroll {
+  overflow: hidden;
+}
+
+.menu {
+  height: 100vh;
+  background-color: var(--primary);
+  z-index: 2;
+  transform-origin: top;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Bebas Neue", sans-serif;
+
+  .container {
+    padding: 0 3.5rem;
+  }
+
+  .logo {
+    color: var(--white);
+  }
+
+  .close {
+    cursor: pointer;
+  }
+
+  .sosmed {
+    text-align: center;
     a {
       text-decoration: none;
-      color: var(--black);
-
-      i {
-        font-size: 30px;
-      }
+      color: var(--white);
+      margin: 0 0.5rem;
     }
   }
 
-  .text-title {
-    margin-bottom: 3rem !important;
+  .menu-list {
     text-align: center;
+    padding: 5rem;
+
+    a {
+      font-size: 50px;
+      text-decoration: none;
+      color: var(--white);
+    }
   }
-  
+}
+
+@media screen and (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+
   .loading-screen {
-    background-color: var(--secondary);
-
-    .loading-logo {
-      width: 100px;
-    }
-
     .progress {
-      width: 25%;
-      background-color: var(--background);
-
-      .progress-bar {
-        background-color: var(--primary);
-        color: var(--background);
-      }
+      width: 50%;
     }
   }
 
-  @media screen and (max-width: 768px) {
-    .cursor {
-      display: none;
-    }
+  .menu {
 
-    .loading-screen {
-
-      .progress {
-        width: 50%;
-      }
+    .container {
+      padding: 0 1.5rem;
     }
-   }
+  }
+}
