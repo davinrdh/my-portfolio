@@ -14,6 +14,8 @@ import ContactPages from "./pages/Contact/ContactPages";
 import LoadingScreen from "./components/LoadingScreen";
 import Menu from "./components/Menu";
 import { AnimatePresence } from "framer-motion";
+import ProjectPage from "./pages/Project/ProjectPage";
+import AboutPage from "./pages/About/AboutPage";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -56,6 +58,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePages />} />
             <Route path="/contact" element={<ContactPages />} />
+            <Route path="/project" element={<ProjectPage />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
           <footer className="text-center">
             <div className="line-gradient"></div>

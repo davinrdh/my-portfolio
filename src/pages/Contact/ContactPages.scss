@@ -1,8 +1,47 @@
 .contact {
-    height: 84.5vh;
+    margin: 2rem;
+    z-index: -1;
 
     h1 {
         text-align: center;
-        padding-top: 2rem;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+        .form-card {
+            border: 1px solid rgb(108,117,125);
+            border-radius: 8px;
+            color: var(--black);
+            padding: 1.5rem;
+            width: 30vw;
+            background-color: transparent;
+
+            h3 {
+                text-align: center;
+            }
+
+            .form-control {
+                background-color: transparent;
+                border: 1px solid rgb(108,117,125);
+                color: var(--black);
+                padding: .5rem 1rem;
+
+                &::placeholder {
+                    color: rgb(108,117,125);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        .container {
+            .form-card {
+                width: 100vw;
+            }
+        }
     }
 }

@@ -4,6 +4,7 @@
     background-color: rgb(49, 51, 59, 0.7);
     backdrop-filter: blur(8px);
     box-shadow: 5px 10px 18px var(--background);
+    z-index: 1000;
 
     a {
         text-decoration: none;
@@ -30,6 +31,8 @@
 
 .hamburger {
     font-size: 2rem;
+    padding: .1rem .6rem;
+    border-radius: 50%;
     cursor: pointer;
 }
 

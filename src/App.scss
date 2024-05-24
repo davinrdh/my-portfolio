@@ -100,6 +100,20 @@ footer {
   overflow: hidden;
 }
 
+.btn-outline-primary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  font-weight: 500;
+  padding: .7rem 3rem;
+  transition: all .1s ease-in-out;
+
+  &:hover {
+      background-color: var(--primary);
+      color: var(--secondary);
+      border: 1px solid var(--background);
+  }
+}
+
 .menu {
   height: 100vh;
   background-color: var(--primary);
@@ -122,6 +136,7 @@ footer {
 
   .close {
     cursor: pointer;
+    padding: .1rem .6rem;
   }
 
   .sosmed {
