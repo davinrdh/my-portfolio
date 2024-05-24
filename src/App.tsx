@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import ContactPages from "./pages/Contact/ContactPages";
 import LoadingScreen from "./components/LoadingScreen";
 import Menu from "./components/Menu";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
