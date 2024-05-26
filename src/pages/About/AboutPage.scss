@@ -1,0 +1,26 @@
+.about {
+    height: 79vh;
+
+    .container {
+        padding: 0 3rem;
+    }
+
+    .illustration {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        text-align: justify;
+        height: 85vh;
+
+        .container {
+            padding: 1rem;
+        }
+
+        .illustration {
+            width: 200px;
+        }
+    }
+ }
