@@ -51,6 +51,10 @@ export default function Skill() {
       skill: "Figma",
       img: "/img/skill/figma.svg",
     },
+    {
+      skill: "Framer Motion",
+      img: "/img/skill/framer-motion.svg",
+    },
   ];
 
   const ref = useRef(null);

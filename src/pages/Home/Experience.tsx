@@ -59,7 +59,7 @@ export default function Experience() {
                 <img
                   src={industries?.img}
                   alt=""
-                  className="img-fluid rounded-circle"
+                  className="rounded-circle"
                 />
               </div>
               <div>
