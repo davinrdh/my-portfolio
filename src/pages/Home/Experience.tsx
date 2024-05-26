@@ -72,7 +72,7 @@ export default function Experience() {
         </Col>
         <Col xs={7}>
           <Row>
-            <Col xs={3} className="position-relative">
+            <Col xs={3} className="position-relative" style={{zIndex: '-1'}}>
               <div className="line"></div>
               <motion.div
                 ref={ref}
