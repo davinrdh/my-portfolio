@@ -30,7 +30,11 @@ export default function ProjectPage() {
   const sliceData = location.pathname === "/" ? datas?.slice(0, 3) : datas;
 
   return (
-    <div style={{ background: `${location.pathname === '/' && 'var(--secondary)'}` }}>
+    <div
+      style={{
+        background: `${location.pathname === "/" && "var(--secondary)"}`,
+      }}
+    >
       <Container>
         <div className="project">
           <h1 className="text-title">
@@ -63,8 +67,19 @@ export default function ProjectPage() {
             ))}
           </Row>
           {location.pathname === "/" && (
-            <NavLink to="/project" className="d-flex justify-content-center mt-3">
-              <Button variant="outline-primary" className="">View More</Button>
+            <NavLink
+              to="/project"
+              className="d-flex justify-content-center mt-3"
+            >
+              <motion.button
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="btn btn-outline-primary"
+              >
+                View More
+              </motion.button>
             </NavLink>
           )}
         </div>

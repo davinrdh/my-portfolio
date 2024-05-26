@@ -76,7 +76,7 @@ export default function Skill() {
       </h1>
       <Row className="skill">
         {dataSkill?.map((data: any, i: number) => {
-            const {opacity, scale} = createTransforms(i, dataSkill?.length)
+            const {opacity} = createTransforms(i, dataSkill?.length)
           return (
             <motion.div
               style={{
@@ -87,11 +87,7 @@ export default function Skill() {
               className="col-md-2 col-3 box-skill"
               key={i}
             >
-              <motion.img
-                style={{
-                  transform: scale,
-                }}
-                transition={{ duration: 0.5 }}
+              <img
                 src={data?.img}
                 alt=""
                 width={60}

@@ -29,6 +29,9 @@ export default function HomePages() {
       y: mousePosition.y - 16,
       // transition: { type: "spring", stiffness: 800, damping: 30, mass: 1 },
       display: "none",
+      backgroundColor: 'var(--background)',
+      opacity:0,
+      zIndex: 0
     },
     text: {
       height: 150,
