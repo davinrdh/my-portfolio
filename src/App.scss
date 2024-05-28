@@ -96,6 +96,11 @@ footer {
   }
 }
 
+.spinner-border {
+  --bs-spinner-width: 1.5rem;
+  --bs-spinner-height: 1.5rem;
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -104,13 +109,13 @@ footer {
   border: 1px solid var(--primary);
   color: var(--primary);
   font-weight: 500;
-  padding: .7rem 3rem;
-  transition: all .1s ease-in-out;
+  padding: 0.7rem 3rem;
+  transition: all 0.1s ease-in-out;
 
   &:hover {
-      background-color: var(--primary);
-      color: var(--secondary);
-      border: 1px solid var(--background);
+    background-color: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--background);
   }
 }
 
@@ -136,7 +141,7 @@ footer {
 
   .close {
     cursor: pointer;
-    padding: .1rem .6rem;
+    padding: 0.1rem 0.6rem;
   }
 
   .sosmed {
@@ -172,7 +177,6 @@ footer {
   }
 
   .menu {
-
     .container {
       padding: 0 1.5rem;
     }
