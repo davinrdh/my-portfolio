@@ -36,7 +36,7 @@ export default function ProjectPage() {
       }}
     >
       <Container>
-        <div className="project">
+        <div className={`project ${location.pathname === "/project" && "min-vh-100"}`}>
           <h1 className="text-title">
             My <span className="text-primary">Projects</span>
           </h1>

@@ -56,7 +56,7 @@ export default function Hero() {
           <motion.img
             initial={{ y: -100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once:true }}
+            viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.4 }}
             src="/img/avatar.png"
             width={250}
@@ -69,7 +69,7 @@ export default function Hero() {
             <motion.h1
               initial={{ y: -100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once:true }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.4 }}
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
@@ -79,7 +79,7 @@ export default function Hero() {
             <motion.h1
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once:true }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.6 }}
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
@@ -90,7 +90,7 @@ export default function Hero() {
             <motion.h1
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true }}
               transition={{ duration: 1.8, delay: 1.8 }}
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
@@ -101,7 +101,7 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
+              viewport={{ once: true }}
               transition={{ duration: 2.3, delay: 2.3 }}
             >
               Passionate JUNIOR FRONT END DEVELOPER with a keen interest in
